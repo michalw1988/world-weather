@@ -1,0 +1,176 @@
+$primary: #221F1F;
+$primary-lighter: lighten($primary, 10%);
+$secondary: #146EB4;
+$light: #eeeeee;
+$light-darker: darken($light, 15%);
+
+// header section
+header {
+	padding: 10px;
+	background: $primary;
+	color: $light;
+	border-bottom: 3px solid $light;
+
+	h1 {
+		font-size: 40px;
+	}
+	
+	span {
+		color: $secondary;
+	}
+}
+
+
+// search bar section
+form#search {
+	background: $secondary;
+	padding: 10px;
+	color: $light;
+
+	input[type="text"] {
+		border: 0;
+		height: 30px;
+		color: $primary;
+		padding: 2px 10px;
+		font-size: 18px;
+		width: 300px;
+	}
+
+	input[type="submit"] {
+		border: 0;
+		height: 34px;
+		color: $light;
+		background: $primary;
+		font-size: 18px;
+		width: 100px;
+
+		&:hover {
+			background: $primary-lighter;
+			cursor: pointer;
+		}
+	}
+}
+
+
+// main section (map and current weather conditions)
+#main {
+	display: flex;
+	flex-direction: row;
+
+	// map section
+	#map {
+		flex: 1;
+
+		agm-map {
+		  height: 65vh;
+		}
+	}
+
+	// current weather sections
+	#weather {
+		min-width: 300px;
+		background: $light;
+		color: $primary;
+		text-align: center;
+		padding: 20px;
+
+		h3, p {
+			margin: 0 0 5px 0;
+			padding: 0;
+		}
+
+		button {
+			margin-top: 10px;
+			border: 0;
+			height: 34px;
+			color: $light;
+			background: $primary;
+			font-size: 18px;
+			width: 120px;
+
+			&:hover {
+				background: $primary-lighter;
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+
+// footer section
+footer {
+	padding: 20px;
+	text-align: center;
+	background: $primary;
+	color: $light;
+
+	a {
+		color: $light;
+		text-decoration: none;
+
+		&:hover {
+			color: $light-darker;
+		}
+	}
+}
+
+
+// for modal with forecast for upcoming days
+#forecastModal {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	min-height: 100%;
+	background: rgba(0, 0, 0, 0.3);
+
+	#modalBox {
+		background: $secondary;
+		box-shadow: 0px 0px 10px #000;
+		max-width: 700px;
+		margin: auto;
+		margin-top: 30px;
+		margin-bottom: 30px;
+
+		#modalHeader {
+			background: $primary;
+			color: $light;
+			font-size: 20px;
+			padding: 10px;
+			display: flex;
+			justify-content: space-between;
+
+			#modalCloseButton:hover {
+				cursor: pointer;
+				color: $light-darker;
+			}
+		}
+
+		#forecast {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			padding: 5px 0;
+		}
+
+		.dayForecastBox {
+			background: $light;
+			width: 200px;
+			text-align: center;
+			padding: 10px;
+			margin: 5px 5px;
+		}
+
+		.weekend {
+			background: $light-darker;
+		}
+	}
+}
+
+
+// media query for smaller screens
+@media (max-width: 700px) {
+	#main {
+		 display: block;
+	}
+}
