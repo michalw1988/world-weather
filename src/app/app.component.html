@@ -29,7 +29,7 @@
 		<h3 *ngIf="sky == null">Enter city name or click on the map</h3>
 		<h3 *ngIf="sky">Current weather conditions</h3>
 		<p *ngIf="sky">{{ sky }}</p>
-		<img *ngIf="icon != null" src="http://openweathermap.org/img/w/{{ icon }}.png">
+		<img *ngIf="icon != null" src="https://openweathermap.org/img/w/{{ icon }}.png">
 		<p *ngIf="temperature != null">Temperature: <strong>{{ temperature }} &#8451;</strong></p>
 		<p *ngIf="windSpeed != null">Wind: <strong>{{ windSpeed }} m/s <span [innerHTML]="windDir"></span></strong></p>
 		<p *ngIf="rain != null">Rain (last 3h): <strong>{{ rain }} mm</strong></p>
