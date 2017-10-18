@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class DataService {
 
-	apiBaseUrl = 'http://api.openweathermap.org/data/2.5/';
+	apiBaseUrl = 'https://api.openweathermap.org/data/2.5/';
 	apiKey = '75259c47cb3b351a43a89ce46060850b';
 
   constructor(public http:Http) { }
